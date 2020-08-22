@@ -4,5 +4,6 @@
 @import 'variables';
 
 body {
-  background-color: $favColor;
+  background: linear-gradient(to bottom, $medRed 0% 20%, $purple 20% 30%, $greyBlue 30% 40%, $orange 40% 50%, $medRed 50% 60%, $yellow 60% 70%, $medRed 70% 80%, $orange 80% 90%, $greyBlue 90% 100%, $purple 90% 100%);
+  height:100vh;
 }
