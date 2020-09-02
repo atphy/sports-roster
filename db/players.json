@@ -1,0 +1,20 @@
+{
+    "player1": {
+        "imageUrl": "",
+        "name": "Tim Ampleford",
+        "position": "C",
+        "uid": ""
+    },
+    "player2": {
+        "imageUrl": "",
+        "name": "Steve Self",
+        "position": "R",
+        "uid": ""
+    },
+    "player3": {
+        "imageUrl": "",
+        "name": "Jack Patterson",
+        "position": "F",
+        "uid": ""
+    }
+}

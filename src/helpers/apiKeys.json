@@ -1,0 +1,12 @@
+
+{
+    "firebaseConfig": {
+      "apiKey": "AIzaSyCd1-uQbBK0E29gZigikPdLAj_U6yftgyQ",
+      "authDomain": "ap-sports-roster.firebaseapp.com",
+      "databaseURL": "https://ap-sports-roster.firebaseio.com",
+      "projectId": "ap-sports-roster",
+      "storageBucket": "ap-sports-roster.appspot.com",
+      "messagingSenderId": "409104643045",
+      "appId": "1:409104643045:web:d2541d2f601c646488f50c"
+    }
+  }

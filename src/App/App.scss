@@ -8,7 +8,13 @@
 .title {
   color: $textWhite;
   font-family: 'Playfair Display SC', serif;
-  font-size: 700%;
+  font-size: 650%;
+}
+
+.top-header {
+  color: $textWhite;
+  margin-top: 2px;
+  margin-bottom: 0;
 }
 
 .sub-header {
@@ -17,11 +23,17 @@
 }
 
 .login-button {
-  background-color: transparent;
+  background-color: $buttonGreen;
+  border-radius: 100%;
   outline: none;
   border: none;
   color: $textWhite;
-  height: 50px;
+  height: 200px;
+  width: 200px;
   font-size: 200%;
-  margin-top: 170px;
+  margin-top: 12%;
+}
+
+.hidden {
+  display: none;
 }
