@@ -16,7 +16,7 @@ class Auth extends React.Component {
         <div className="auth">
           <h2 className="sub-header hidden">1964-1980</h2>
           <button className="login-button" onClick={this.loginClick}>Log In</button>
-          <img className="login-img" src="https://i.imgur.com/g2rCa5I.png"></img>
+          <img className="login-img" src="https://i.imgur.com/g2rCa5I.png" alt="dayton gems mascot"></img>
         </div>
     );
   }
