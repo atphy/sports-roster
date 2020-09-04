@@ -1,0 +1,28 @@
+@import '../../styles/variables';
+
+.sub-header {
+    color: $textWhite;
+    margin-top: 30px;
+  }
+  
+  .login-button {
+    background-color: $buttonGreen;
+    border-radius: 100%;
+    outline: none;
+    border: none;
+    color: $textWhite;
+    height: 200px;
+    width: 200px;
+    font-size: 200%;
+    margin-top: 12%;
+  }
+  
+  .login-img {
+    position: absolute;
+    height: 400px;
+    margin: 150px 170px;
+  }
+  
+  .hidden {
+    display: none;
+  }

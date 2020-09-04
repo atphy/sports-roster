@@ -1,0 +1,13 @@
+@import '../../styles/variables';
+
+.logout-button {
+    display: flex;
+    position: absolute;
+    top: 0px;
+    right: 0px;
+    margin-top: 10px;
+    background-color: $medRed;
+    outline: none;
+    border: none;
+    color: $textWhite;
+}
