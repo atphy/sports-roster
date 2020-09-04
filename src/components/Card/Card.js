@@ -1,5 +1,7 @@
 import React from 'react';
 
+import './Card.scss';
+
 import cardShape from '../../helpers/props/cardShape';
 
 class Card extends React.Component {
@@ -12,10 +14,10 @@ class Card extends React.Component {
 
       return (
         <div className="card">
-        <img className="card-img-top" src={player.imgUrl} alt="Player" />
+        <img className="card-image" src={player.imageUrl} alt="Player" />
         <div className="card-body">
-          <h5 className="card-title">{player.name}</h5>
-          <p className="card-text">{player.position}</p>
+          <h1 className="card-title">{player.name}</h1>
+          <p className="card-text">Position: {player.position}</p>
         </div>
       </div>
       );

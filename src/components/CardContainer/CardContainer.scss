@@ -11,3 +11,23 @@
     border: none;
     color: $textWhite;
 }
+
+.card-container {
+    overflow: scroll;
+    overflow-x: hidden;
+    height: 517px;
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    box-shadow: inset 0 0 5px grey;
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: #f95f69;
+    border-radius: 10px;
+  }
