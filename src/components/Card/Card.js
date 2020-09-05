@@ -13,11 +13,11 @@ class Card extends React.Component {
       const { player } = this.props;
 
       return (
-        <div className="card">
-        <img className="card-image" src={player.imageUrl} alt="Player" />
-        <div className="card-body">
-          <h1 className="card-title">{player.name}</h1>
-          <p className="card-text">Position: {player.position}</p>
+        <div className="player">
+        <img className="player-image" src={player.imageUrl} alt="Player" />
+        <div className="player-body">
+          <h1 className="player-title">{player.name}</h1>
+          <p className="player-position">Position: {player.position}</p>
         </div>
       </div>
       );

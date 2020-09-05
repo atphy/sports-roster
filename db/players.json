@@ -1,20 +1,38 @@
 {
     "player1": {
-        "imageUrl": "",
+        "imageUrl": "https://www.hockeydb.com/ihdb/stats/photo.php?if=tim-ampleford-1973-4369.jpg",
         "name": "Tim Ampleford",
-        "position": "C",
+        "position": "Center",
         "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
     },
     "player2": {
-        "imageUrl": "",
+        "imageUrl": "https://www.oneternalpatrol.com/Researcher-Photo-Needed.jpg",
         "name": "Steve Self",
-        "position": "R",
+        "position": "Right Wing",
         "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
     },
     "player3": {
-        "imageUrl": "",
+        "imageUrl": "https://www.oneternalpatrol.com/Researcher-Photo-Needed.jpg",
         "name": "Jack Patterson",
-        "position": "F",
+        "position": "Forward",
+        "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
+    },
+    "player4": {
+        "imageUrl": "https://www.oneternalpatrol.com/Researcher-Photo-Needed.jpg",
+        "name": "Frank Werner",
+        "position": "Left Wing",
+        "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
+    },
+    "player5": {
+        "imageUrl": "https://www.oneternalpatrol.com/Researcher-Photo-Needed.jpg",
+        "name": "Al Dumba",
+        "position": "Right Wing",
+        "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
+    },
+    "player6": {
+        "imageUrl": "https://www.oneternalpatrol.com/Researcher-Photo-Needed.jpg",
+        "name": "Paul Nicholson",
+        "position": "Forward",
         "uid": "rJ2L9BOJkNY6XdyeZYADmFYHnhH3"
     }
 }
