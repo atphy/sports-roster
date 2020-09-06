@@ -1,0 +1,14 @@
+@import '../../styles/variables';
+
+.player-form {
+    height: 200px;
+    width: 700px;
+    background-color: $textWhite;
+    color: black;
+    margin: 20px;
+    display: flex;
+    border: 1px solid black;
+    float: left;
+    justify-content: center;
+    padding-top: 20px;
+};
