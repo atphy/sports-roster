@@ -42,6 +42,15 @@ componentDidMount() {
         .catch((err) => console.error('delete failed', err));
     }
 
+    createPlayer = (newPlayer) => {
+      playersData.createPlayer(newPlayer)
+        .then(() => {
+          this.getPlayers();
+          this.setState({ formOpen: false });
+        })
+        .catch((err) => console.error('create failed'));
+    }
+
     render() {
       const { authed } = this.props;
       const { players, formOpen } = this.state;
@@ -57,7 +66,7 @@ componentDidMount() {
                     ? <button className="logout-button" onClick={this.logoutClick} >Log Out</button>
                     : ''
               }
-              { formOpen ? <PlayerForm /> : '' }
+              { formOpen ? <PlayerForm createPlayer={this.createPlayer}/> : '' }
               {playerCard}
           </div>
           </div>

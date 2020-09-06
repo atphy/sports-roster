@@ -1,10 +1,15 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import authData from '../../helpers/data/authData';
 
 import './PlayerForm.scss';
 
 class PlayerForm extends React.Component {
+    static propTypes = {
+      createPlayer: PropTypes.func.isRequired,
+    }
+
     state = {
       name: '',
       position: '',
@@ -30,13 +35,14 @@ class PlayerForm extends React.Component {
       e.preventDefault();
 
       const { name, position, imageUrl } = this.state;
+      const { createPlayer } = this.props;
       const newPlayer = {
         name,
         position,
         imageUrl,
         uid: authData.getUid(),
       };
-      console.warn(newPlayer);
+      createPlayer(newPlayer);
     }
 
     render() {
