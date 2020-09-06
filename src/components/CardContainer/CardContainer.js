@@ -50,7 +50,7 @@ componentDidMount() {
 
       return (
           <div>
-              <button className="open-form-button" onClick={() => { this.setState({ formOpen: !formOpen }); }}><i class="fas fa-plus-square"></i></button>
+              <button className="open-form-button" onClick={() => { this.setState({ formOpen: !formOpen }); }}><i className="fas fa-plus-square"></i></button>
           <div className="card-container">
               {
                   authed

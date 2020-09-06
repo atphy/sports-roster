@@ -1,26 +1,62 @@
 import React from 'react';
 
+import authData from '../../helpers/data/authData';
+
 import './PlayerForm.scss';
 
 class PlayerForm extends React.Component {
-  render() {
-    return (
+    state = {
+      name: '',
+      position: '',
+      imageUrl: '',
+    };
+
+    changeNameEvent = (e) => {
+      e.preventDefault();
+      this.setState({ name: e.target.value });
+    }
+
+    changePositionEvent = (e) => {
+      e.preventDefault();
+      this.setState({ position: e.target.value });
+    }
+
+    changeImageEvent = (e) => {
+      e.preventDefault();
+      this.setState({ imageUrl: e.target.value });
+    }
+
+    addPlayerEvent = (e) => {
+      e.preventDefault();
+
+      const { name, position, imageUrl } = this.state;
+      const newPlayer = {
+        name,
+        position,
+        imageUrl,
+        uid: authData.getUid(),
+      };
+      console.warn(newPlayer);
+    }
+
+    render() {
+      return (
             <div className="player-form">
                 <form>
                   <div className="form-group">
-                    <input type="text" class="form-control" id="formGroupExampleInput" placeholder="Name" required />
+                    <input type="text" className="form-control" id="formGroupExampleInput" placeholder="Name" onChange={this.changeNameEvent} required />
                   </div>
                   <div className="form-group">
-                     <input type="text" class="form-control" id="formGroupExampleInput2" placeholder="Position" required />
+                     <input type="text" className="form-control" id="formGroupExampleInput2" placeholder="Position" onChange={this.changePositionEvent} required />
                   </div>
-                  <div class="custom-file">
-                    <input type="file" class="custom-file-input" id="coaster-image" required />
-                    <label className="custom-file-label" for="coaster-image" id="coaster-image-label">Upload Player Image</label>
+                  <div className="form-group">
+                     <input type="text" className="form-control" id="formGroupExampleInput3" placeholder="Image URL" onChange={this.changeImageEvent} required />
                   </div>
+                  <button className="btn btn-dark add-player-button" onClick={this.addPlayerEvent}>Add Player</button>
                 </form>
             </div>
-    );
-  }
+      );
+    }
 }
 
 export default PlayerForm;
