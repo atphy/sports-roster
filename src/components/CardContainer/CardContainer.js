@@ -42,6 +42,15 @@ componentDidMount() {
         .catch((err) => console.error('delete failed', err));
     }
 
+    createPlayer = (newPlayer) => {
+      playersData.createPlayer(newPlayer)
+        .then(() => {
+          this.getPlayers();
+          this.setState({ formOpen: false });
+        })
+        .catch((err) => console.error('create failed'));
+    }
+
     render() {
       const { authed } = this.props;
       const { players, formOpen } = this.state;
@@ -50,14 +59,14 @@ componentDidMount() {
 
       return (
           <div>
-              <button className="open-form-button" onClick={() => { this.setState({ formOpen: !formOpen }); }}><i class="fas fa-plus-square"></i></button>
+              <button className="open-form-button" onClick={() => { this.setState({ formOpen: !formOpen }); }}><i className="fas fa-plus-square"></i></button>
           <div className="card-container">
               {
                   authed
                     ? <button className="logout-button" onClick={this.logoutClick} >Log Out</button>
                     : ''
               }
-              { formOpen ? <PlayerForm /> : '' }
+              { formOpen ? <PlayerForm createPlayer={this.createPlayer}/> : '' }
               {playerCard}
           </div>
           </div>
