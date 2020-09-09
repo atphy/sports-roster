@@ -52,8 +52,8 @@ componentDidMount() {
         .catch((err) => console.error('create failed', err));
     }
 
-    editPlayer = (playerToEdit) => {
-      this.setState({ formOpen: true, editPlayer: playerToEdit });
+    editPlayer = (editPlayer) => {
+      this.setState({ formOpen: true, playerToEdit: editPlayer });
     }
 
     updatePlayer = (playerId, updatedPlayer) => {
