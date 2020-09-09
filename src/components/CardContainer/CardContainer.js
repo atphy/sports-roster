@@ -49,12 +49,21 @@ componentDidMount() {
           this.getPlayers();
           this.setState({ formOpen: false });
         })
-        .catch((err) => console.error('create failed'));
+        .catch((err) => console.error('create failed', err));
     }
 
     editPlayer = (playerToEdit) => {
       this.setState({ formOpen: true, editPlayer: playerToEdit });
     }
+
+    updatePlayer = (playerId, updatedPlayer) => {
+      playersData.updatePlayer(playerId, updatedPlayer)
+        .then(() => {
+          this.getPlayers();
+          this.setState({ formOpen: false, editPlayer: {} });
+        })
+        .catch((err) => console.warn('update player failed', err));
+    };
 
     render() {
       const { authed } = this.props;
@@ -71,7 +80,7 @@ componentDidMount() {
                     ? <button className="logout-button" onClick={this.logoutClick} >Log Out</button>
                     : ''
               }
-              { formOpen ? <PlayerForm createPlayer={this.createPlayer} editPlayer={playerToEdit} /> : '' }
+              { formOpen ? <PlayerForm createPlayer={this.createPlayer} editPlayer={playerToEdit} updatePlayer = {this.updatePlayer} /> : '' }
               {playerCard}
           </div>
           </div>

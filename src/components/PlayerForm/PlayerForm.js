@@ -9,6 +9,7 @@ class PlayerForm extends React.Component {
     static propTypes = {
       createPlayer: PropTypes.func.isRequired,
       editPlayer: PropTypes.object.isRequired,
+      updatePlayer: PropTypes.func.isRequired,
     }
 
     state = {
@@ -57,6 +58,20 @@ class PlayerForm extends React.Component {
         uid: authData.getUid(),
       };
       createPlayer(newPlayer);
+    }
+
+    editPlayerEvent = (e) => {
+      e.preventDefault();
+      const { name, position, imageUrl } = this.state;
+      const { updatePlayer, editPlayer } = this.props;
+      const myUpdatedPlayer = {
+        name,
+        position,
+        imageUrl,
+        uid: authData.getUid(),
+      };
+
+      updatePlayer(editPlayer.id, myUpdatedPlayer);
     }
 
     render() {
