@@ -24,7 +24,7 @@ class PlayerForm extends React.Component {
       if (editPlayer.name) {
         this.setState({
           name: editPlayer.name,
-          postion: editPlayer.position,
+          position: editPlayer.position,
           imageUrl: editPlayer.imageUrl,
           isEditing: true,
         });
