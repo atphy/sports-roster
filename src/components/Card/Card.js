@@ -27,7 +27,8 @@ class Card extends React.Component {
           <h1 className="player-title">{player.name}</h1>
           <p className="player-position">Position: {player.position}</p>
         </div>
-        <button className="delete-player-bttn" onClick={this.deletePlayerEvent}>X</button>
+        <button className="update-player-bttn" onClick={this.deletePlayerEvent}><i class="fas fa-edit"></i></button>
+        <button className="delete-player-bttn" onClick={this.deletePlayerEvent}><i class="fas fa-trash-alt"></i></button>
       </div>
       );
     }
