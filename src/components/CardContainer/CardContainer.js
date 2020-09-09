@@ -14,6 +14,7 @@ class CardContainer extends React.Component {
 state = {
   players: [],
   formOpen: false,
+  editPlayer: {},
 }
 
 static propTypes = {
@@ -51,11 +52,16 @@ componentDidMount() {
         .catch((err) => console.error('create failed'));
     }
 
+    editPlayer = (player) => {
+      console.warn(player);
+      this.setState({ formOpen: true, editPlayer: player });
+    }
+
     render() {
       const { authed } = this.props;
       const { players, formOpen } = this.state;
 
-      const playerCard = players.map((player) => <Card key={player.name} player={player} deletePlayer={this.deletePlayer} />);
+      const playerCard = players.map((player) => <Card key={player.name} player={player} deletePlayer={this.deletePlayer} editPlayer={this.editPlayer} />);
 
       return (
           <div>
