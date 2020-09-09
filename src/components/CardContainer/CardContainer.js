@@ -14,6 +14,7 @@ class CardContainer extends React.Component {
 state = {
   players: [],
   formOpen: false,
+  playerToEdit: {},
 }
 
 static propTypes = {
@@ -48,14 +49,27 @@ componentDidMount() {
           this.getPlayers();
           this.setState({ formOpen: false });
         })
-        .catch((err) => console.error('create failed'));
+        .catch((err) => console.error('create failed', err));
     }
+
+    editPlayer = (playerToEdit) => {
+      this.setState({ formOpen: true, editPlayer: playerToEdit });
+    }
+
+    updatePlayer = (playerId, updatedPlayer) => {
+      playersData.updatePlayer(playerId, updatedPlayer)
+        .then(() => {
+          this.getPlayers();
+          this.setState({ formOpen: false, editPlayer: {} });
+        })
+        .catch((err) => console.warn('update player failed', err));
+    };
 
     render() {
       const { authed } = this.props;
-      const { players, formOpen } = this.state;
+      const { players, formOpen, playerToEdit } = this.state;
 
-      const playerCard = players.map((player) => <Card key={player.name} player={player} deletePlayer={this.deletePlayer} />);
+      const playerCard = players.map((player) => <Card key={player.name} player={player} deletePlayer={this.deletePlayer} editPlayer={this.editPlayer} />);
 
       return (
           <div>
@@ -66,7 +80,7 @@ componentDidMount() {
                     ? <button className="logout-button" onClick={this.logoutClick} >Log Out</button>
                     : ''
               }
-              { formOpen ? <PlayerForm createPlayer={this.createPlayer}/> : '' }
+              { formOpen ? <PlayerForm createPlayer={this.createPlayer} editPlayer={playerToEdit} updatePlayer = {this.updatePlayer} /> : '' }
               {playerCard}
           </div>
           </div>

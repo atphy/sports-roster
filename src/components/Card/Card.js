@@ -9,6 +9,7 @@ class Card extends React.Component {
     static propTypes = {
       card: cardShape.cardShape,
       deletePlayer: PropTypes.func.isRequired,
+      editPlayer: PropTypes.func.isRequired,
     }
 
     deletePlayerEvent = (e) => {
@@ -16,6 +17,12 @@ class Card extends React.Component {
       const { player, deletePlayer } = this.props;
       deletePlayer(player.id);
     };
+
+    editPlayerEvent = (e) => {
+      e.preventDefault();
+      const { editPlayer, player } = this.props;
+      editPlayer(player);
+    }
 
     render() {
       const { player } = this.props;
@@ -27,7 +34,8 @@ class Card extends React.Component {
           <h1 className="player-title">{player.name}</h1>
           <p className="player-position">Position: {player.position}</p>
         </div>
-        <button className="delete-player-bttn" onClick={this.deletePlayerEvent}>X</button>
+        <button className="update-player-bttn" onClick={this.editPlayerEvent}><i className="fas fa-edit"></i></button>
+        <button className="delete-player-bttn" onClick={this.deletePlayerEvent}><i className="fas fa-trash-alt"></i></button>
       </div>
       );
     }
